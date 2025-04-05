@@ -5,234 +5,194 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sri Venkateshwara Mechanical Engineering Works</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
-<style>
-  /* Reset & base */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    background-color: #f7f9fc;
-    color: #333;
-  }
-
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-
-  /* Header */
-  header {
-    background-color: #1f2937;
-    color: #fff;
-    text-align: center;
-    padding: 40px 20px;
-  }
-
-  header .logo {
-    width: 100px;
-    margin-bottom: 10px;
-    border-radius: 50%;
-    background-color: #fff;
-    padding: 10px;
-  }
-
-  header h1 {
-    font-size: 2rem;
-    margin-bottom: 5px;
-  }
-
-  header p {
-    font-size: 1.1rem;
-    font-weight: 300;
-  }
-
-  /* Main Container */
-  .container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 30px 20px;
-    background: #fff;
-    box-shadow: 0 0 20px rgba(0,0,0,0.05);
-  }
-
-  /* About Section */
-  .about {
-    background: #f9fafc;
-    padding: 30px;
-    border-left: 4px solid #2c3e50;
-    margin-bottom: 40px;
-  }
-
-  .about h2 {
-    font-size: 1.5rem;
-    color: #2c3e50;
-    margin-bottom: 10px;
-  }
-
-  .about p {
-    font-size: 1rem;
-    line-height: 1.8;
-  }
-
-  /* Swiper Slideshow */
-  .swiper {
-    width: 100%;
-    height: 550px;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 40px;
-  }
-
-  .swiper-slide {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    text-align: center;
-  }
-
-  .swiper-slide img {
-    max-width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  }
-
-  .swiper-slide strong {
-    margin-top: 10px;
-    font-size: 1.1rem;
-    color: #2c3e50;
-  }
-
-  /* Footer */
-  footer {
-    background-color: #1f2937;
-    color: #fff;
-    text-align: center;
-    padding: 30px 20px;
-  }
-
-  .contact-info {
-    font-size: 1rem;
-    line-height: 2;
-  }
-
-  .contact-info img {
-    width: 20px;
-    vertical-align: middle;
-    margin-right: 8px;
-    filter: brightness(0) invert(1);
-  }
-
-  .contact-info a {
-    color: #66d9ef;
-  }
-
-  /* WhatsApp Float Button */
-  .whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25D366;
-    color: white;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 2px 2px 3px #999;
-    z-index: 100;
-  }
-
-  .whatsapp-float i {
-    line-height: 60px;
-  }
-
-  /* Responsive */
-  @media (max-width: 768px) {
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f2f5;
+      color: #333;
+    }
+    a { text-decoration: none; color: inherit; }
+    header {
+      background: #20232a;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+    header img {
+      width: 100px;
+      margin-bottom: 1rem;
+    }
     header h1 {
-      font-size: 1.5rem;
+      font-size: 2rem;
     }
-
-    .about, .container {
-      padding: 20px;
+    .lang-toggle {
+      margin-top: 10px;
     }
-
-    .swiper {
-      height: 400px;
+    .lang-toggle button {
+      margin: 0 5px;
+      padding: 5px 10px;
+      cursor: pointer;
     }
-
-    .swiper-slide img {
-      height: 250px;
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
-  }
-</style>
+    .about, .machinery, .contact, .form-section {
+      margin-bottom: 2rem;
+    }
+    h2 {
+      color: #20232a;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.5rem;
+    }
+    .machinery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .machine {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      background: #fafafa;
+      transition: transform 0.3s ease;
+    }
+    .machine:hover {
+      transform: scale(1.03);
+    }
+    .machine img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .contact {
+      text-align: center;
+      background: #20232a;
+      color: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+    }
+    .contact p {
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+    }
+    .contact i {
+      margin-right: 8px;
+    }
+    .form-section form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 500px;
+      margin: auto;
+    }
+    .form-section input, .form-section textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .form-section button {
+      background: #20232a;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    footer {
+      background: #101114;
+      color: #aaa;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <img src="logo-png.jpeg" alt="Sri Venkateshwara Engineering Works Logo" class="logo" /> 
+  <header class="animate__animated animate__fadeInDown">
+    <img src="logo-png.jpeg" alt="Company Logo">
     <h1>Sri Venkateshwara Mechanical Engineering Works</h1>
-    <p>Precision. Performance. Perfection.</p>
+    <p id="tagline">Precision. Performance. Perfection.</p>
+    <div class="lang-toggle">
+      <button onclick="setLanguage('en')">English</button>
+      <button onclick="setLanguage('te')">తెలుగు</button>
+      <button onclick="setLanguage('hi')">हिंदी</button>
+    </div>
   </header>
 
-  <div class="container">
+  <div class="container animate__animated animate__fadeInUp">
     <section class="about">
-      <h2>About Us</h2>
-      <p>We are a premier engine component reconditioning center in Hyderabad, offering precision honing, boring, grinding, and machining with state-of-the-art equipment. Trusted by industries for performance and accuracy.</p>
+      <h2 id="about-heading">About Us</h2>
+      <p id="about-text">We are a premier engine component reconditioning center in Hyderabad, offering precision honing, boring, grinding, and machining with state-of-the-art equipment. Trusted by industries for performance and accuracy.</p>
     </section>
 
-    <section>
+    <section class="machinery">
       <h2>Our Machinery</h2>
-      <div class="swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="https://vampire0121.github.io/cylinder_honing.png" alt="Cylinder Honing Machine"><strong>Cylinder Honing Machine</strong></div>
-          <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Cylinder_boring_machine.jpg"><strong>Cylinder Boring Machine</strong></div>
-          <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Centre_lathe.jpg"><strong>Lathe Machine</strong></div>
-          <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Hydraulic_press.jpg"><strong>Hydraulic Press</strong></div>
-          <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Bench_drill.jpg"><strong>Bench Drill Machine</strong></div>
-          <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Crankshaft_grinder.jpg"><strong>Crankshaft Grinding Machine</strong></div>
-        </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+      <div class="machinery-grid">
+        <div class="machine"><img src="cylinder_honing.png" alt="Cylinder Honing Machine"><h3>Cylinder Honing Machine</h3></div>
+        <div class="machine"><img src="cylinder boring machine.jpg" alt="Cylinder Boring Machine"><h3>Cylinder Boring Machine</h3></div>
+        <div class="machine"><img src="lathe-machine.webp" alt="Lathe Machine"><h3>Lathe Machine</h3></div>
+        <div class="machine"><img src="hydraulic press.jpeg" alt="Hydraulic Press"><h3>Hydraulic Press</h3></div>
+        <div class="machine"><img src="drilling-machine.webp" alt="Bench Drill Machine"><h3>Bench Drill Machine</h3></div>
+        <div class="machine"><img src="crank grinding machine.jpg" alt="Crankshaft Grinding Machine"><h3>Crankshaft Grinding Machine</h3></div>
       </div>
+    </section>
+
+    <section class="form-section">
+      <h2>Contact Form</h2>
+      <form onsubmit="submitForm(event)">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <section class="contact">
+      <h2>Contact Us</h2>
+      <p><i class="fas fa-phone"></i> +91 9704011672</p>
+      <p><i class="fas fa-envelope"></i> srivenkateshwaramechanicalengi@gmail.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> Balaji Nagar, beside Delta Hospital, Hasthinapuram, L.B. Nagar, Hyderabad - 500079</p>
     </section>
   </div>
 
-  <a href="https://wa.me/919704011672" class="whatsapp-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
   <footer>
-    <div class="contact-info">
-      <p><img src="https://cdn-icons-png.flaticon.com/512/724/724664.png">+91 9704011672</p>
-      <p><img src="https://cdn-icons-png.flaticon.com/512/561/561127.png">srivenkateshwaramechanicalengi@gmail.com</p>
-      <p><img src="https://cdn-icons-png.flaticon.com/512/684/684908.png">
-        <a href="https://maps.google.com/?q=17.325228,78.557841" target="_blank">
-          Balaji Nagar, beside Delta Hospital, Hasthinapuram, L.B. Nagar, Hyderabad - 500079
-        </a>
-      </p>
-    </div>
+    &copy; 2025 Sri Venkateshwara Mechanical Engineering Works. All rights reserved.
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script>
-    const swiper = new Swiper(".swiper", {
-      loop: true,
-      pagination: { el: ".swiper-pagination", clickable: true },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
+    function setLanguage(lang) {
+      const text = {
+        en: {
+          tagline: "Precision. Performance. Perfection.",
+          about: "We are a premier engine component reconditioning center in Hyderabad, offering precision honing, boring, grinding, and machining with state-of-the-art equipment. Trusted by industries for performance and accuracy."
+        },
+        te: {
+          tagline: "నిర్ధిష్టత. పనితీరు. పరిపూర్ణత.",
+          about: "మేము హైదరాబాద్‌లో ఉన్న ప్రముఖ ఇంజిన్ భాగాల పునఃప్రాసెస్ కేంద్రం, ఖచ్చితమైన హోనింగ్, బోరింగ్, గ్రైండింగ్, మిల్లింగ్ సేవలను అందిస్తున్నాము."
+        },
+        hi: {
+          tagline: "सटीकता। प्रदर्शन। पूर्णता।",
+          about: "हम हैदराबाद में एक प्रमुख इंजन घटक पुनर्निर्माण केंद्र हैं, जो सटीक होनिंग, बोरिंग, ग्राइंडिंग और मशीनिंग सेवाएं प्रदान करता है।"
+        }
+      };
+      document.getElementById("tagline").textContent = text[lang].tagline;
+      document.getElementById("about-text").textContent = text[lang].about;
+    }
+
+    function submitForm(event) {
+      event.preventDefault();
+      alert("Thank you for your message! We'll get back to you soon.");
+    }
   </script>
 </body>
 </html>
