@@ -64,6 +64,7 @@
       text-align: center;
       background: #fafafa;
       transition: transform 0.3s ease;
+      cursor: pointer;
     }
     .machine:hover {
       transform: scale(1.03);
@@ -74,19 +75,18 @@
       object-fit: cover;
       border-radius: 6px;
     }
+    .description {
+      display: none;
+      margin-top: 1rem;
+      text-align: left;
+      font-size: 0.95rem;
+    }
     .contact {
       text-align: center;
       background: #20232a;
       color: #fff;
       padding: 2rem;
       border-radius: 8px;
-    }
-    .contact p {
-      margin: 0.5rem 0;
-      font-size: 1.1rem;
-    }
-    .contact i {
-      margin-right: 8px;
     }
     .form-section form {
       display: flex;
@@ -108,6 +108,13 @@
       cursor: pointer;
       border-radius: 4px;
     }
+    .thank-you {
+      display: none;
+      text-align: center;
+      font-size: 1.1rem;
+      padding: 20px;
+      color: green;
+    }
     footer {
       background: #101114;
       color: #aaa;
@@ -119,7 +126,7 @@
 </head>
 <body>
   <header class="animate__animated animate__fadeInDown">
-    <img src="ss_logo.png"alt="Company Logo">
+    <img src="ss_logo.png" alt="Company Logo">
     <h1>Sri Venkateshwara Mechanical Engineering Works</h1>
     <p id="tagline">Precision. Performance. Perfection.</p>
     <div class="lang-toggle">
@@ -138,23 +145,24 @@
     <section class="machinery">
       <h2>Our Machinery</h2>
       <div class="machinery-grid">
-        <div class="machine"><img src="cylinder_honing.png" alt="Cylinder Honing Machine"><h3>Cylinder Honing Machine</h3></div>
-        <div class="machine"><img src="cylinder boring machine.jpg" alt="Cylinder Boring Machine"><h3>Cylinder Boring Machine</h3></div>
-        <div class="machine"><img src="lathe-machine.webp" alt="Lathe Machine"><h3>Lathe Machine</h3></div>
-        <div class="machine"><img src="Hydraulicpress.com" alt="Hydraulic Press"><h3>Hydraulic Press</h3></div>
-        <div class="machine"><img src="drilling-machine.webp" alt="Bench Drill Machine"><h3>Bench Drill Machine</h3></div>
-        <div class="machine"><img src="crank grinding machine.jpg" alt="Crankshaft Grinding Machine"><h3>Crankshaft Grinding Machine</h3></div>
+        <div class="machine" onclick="toggleDescription(this)"><img src="cylinder_honing.png" alt="Cylinder Honing Machine"><h3>Cylinder Honing Machine</h3><div class="description">This machine improves oil retention and ring seating through cross-hatch honing. It’s crucial for performance rebuilding.</div></div>
+        <div class="machine" onclick="toggleDescription(this)"><img src="cylinder boring machine.jpg" alt="Cylinder Boring Machine"><h3>Cylinder Boring Machine</h3><div class="description">It enlarges worn cylinders to factory specifications. Ensures accurate piston fit and engine performance.</div></div>
+        <div class="machine" onclick="toggleDescription(this)"><img src="lathe-machine.webp" alt="Lathe Machine"><h3>Lathe Machine</h3><div class="description">For turning, facing, and threading components. It shapes precision round parts from metals.</div></div>
+        <div class="machine" onclick="toggleDescription(this)"><img src="Hydraulicpress.com" alt="Hydraulic Press"><h3>Hydraulic Press</h3><div class="description">Provides uniform force to remove/install mechanical components. Critical for pressing and assembly operations.</div></div>
+        <div class="machine" onclick="toggleDescription(this)"><img src="drilling-machine.webp" alt="Bench Drill Machine"><h3>Bench Drill Machine</h3><div class="description">Drills accurate holes in metal parts. Adjustable height, speed, and precision.</div></div>
+        <div class="machine" onclick="toggleDescription(this)"><img src="crank grinding machine.jpg" alt="Crankshaft Grinding Machine"><h3>Crankshaft Grinding Machine</h3><div class="description">Restores crank journals to specs. Ensures smooth rotation and reduces engine wear.</div></div>
       </div>
     </section>
 
-    <section class="form-section">
+    <section class="form-section" id="form-section">
       <h2>Contact Form</h2>
-      <form onsubmit="submitForm(event)">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea rows="4" placeholder="Your Message" required></textarea>
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
       </form>
+      <div class="thank-you" id="thankYou">✅ Thank you for reaching out! We'll contact you soon.</div>
     </section>
 
     <section class="contact">
@@ -189,10 +197,25 @@
       document.getElementById("about-text").textContent = text[lang].about;
     }
 
-    function submitForm(event) {
-      event.preventDefault();
-      alert("Thank you for your message! We'll get back to you soon.");
+    function toggleDescription(el) {
+      const desc = el.querySelector(".description");
+      desc.style.display = desc.style.display === 'block' ? 'none' : 'block';
     }
+
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+
+      const whatsappURL = `https://wa.me/919704011672?text=Customer Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+      window.open(whatsappURL, "_blank");
+
+      alert(`A confirmation email will be sent to ${email}. Thank you for contacting us.`);
+
+      document.getElementById("contactForm").style.display = "none";
+      document.getElementById("thankYou").style.display = "block";
+    });
   </script>
 </body>
 </html>
