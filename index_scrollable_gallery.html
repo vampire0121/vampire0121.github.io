@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sri Venkateshwara Mechanical Engineering Works</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: #f4f4f4; color: #333; }
+    header { background: #1f2937; color: white; text-align: center; padding: 30px 20px; }
+    .logo { width: 120px; margin: 0 auto 10px; display: block; border-radius: 12px; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 20px; background: white; }
+    h1, h2 { color: #1f2937; }
+    .swiper { width: 100%; height: 600px; margin-bottom: 40px; }
+    .swiper-slide {
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; text-align: center; padding: 10px;
+    }
+    .swiper-slide img {
+      width: 100%; height: 500px; object-fit: cover;
+      border-radius: 12px; margin-bottom: 10px;
+    }
+    .about { background: #f9f9f9; padding: 20px; border-left: 4px solid #2c3e50; margin-bottom: 30px; }
+    footer { background: #1f2937; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+    .contact-info { line-height: 2; font-size: 16px; }
+    .contact-info img { width: 20px; vertical-align: middle; margin-right: 8px; }
+    .whatsapp-float {
+      position: fixed; bottom: 20px; right: 20px;
+      background-color: #25D366; color: white; border-radius: 50%;
+      width: 60px; height: 60px; text-align: center; font-size: 30px;
+      box-shadow: 2px 2px 3px #999; z-index: 100;
+    }
+    .whatsapp-float i { line-height: 60px; }
+    a { color: #fff; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Engineering_icon.svg/1024px-Engineering_icon.svg.png" alt="Company Logo" class="logo" />
+    <h1>Sri Venkateshwara Mechanical Engineering Works</h1>
+    <p>Precision. Performance. Perfection.</p>
+  </header>
+
+  <div class="container">
+    <section class="about">
+      <h2>About Us</h2>
+      <p>We are a premier engine component reconditioning center in Hyderabad, offering precision honing, boring, grinding, and machining with state-of-the-art equipment. Trusted by industries for performance and accuracy.</p>
+    </section>
+
+    <section>
+      <h2>Our Machinery</h2>
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Cylinder_honing_machine.jpg"><strong>Cylinder Honing Machine</strong></div>
+          <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Cylinder_boring_machine.jpg"><strong>Cylinder Boring Machine</strong></div>
+          <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Centre_lathe.jpg"><strong>Lathe Machine</strong></div>
+          <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Hydraulic_press.jpg"><strong>Hydraulic Press</strong></div>
+          <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Bench_drill.jpg"><strong>Bench Drill Machine</strong></div>
+          <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Crankshaft_grinder.jpg"><strong>Crankshaft Grinding Machine</strong></div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </section>
+  </div>
+
+  <a href="https://wa.me/919704011672" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <footer>
+    <div class="contact-info">
+      <p><img src="https://cdn-icons-png.flaticon.com/512/724/724664.png">+91 9704011672</p>
+      <p><img src="https://cdn-icons-png.flaticon.com/512/561/561127.png">srivenkateshwaramechanicalengi@gmail.com</p>
+      <p><img src="https://cdn-icons-png.flaticon.com/512/684/684908.png">
+        <a href="https://maps.google.com/?q=17.325228,78.557841" target="_blank">
+          Balaji Nagar, beside Delta Hospital, Hasthinapuram, L.B. Nagar, Hyderabad - 500079
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper(".swiper", {
+      loop: true,
+      pagination: { el: ".swiper-pagination", clickable: true },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+</body>
+</html>
