@@ -1,173 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sri Venkateshwara Mechanical Engineering Works</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
       font-family: 'Segoe UI', sans-serif;
       background-color: #f0f2f5;
       color: #333;
+      line-height: 1.6;
     }
-    a { text-decoration: none; color: inherit; }
     header {
       background: #20232a;
       color: #fff;
-      padding: 2rem;
+      padding: 3rem 1rem;
       text-align: center;
     }
     header img {
-      width: 100px;
+      width: 120px;
       margin-bottom: 1rem;
+      animation: fadeInDown 1s ease-in-out;
     }
     header h1 {
-      font-size: 2rem;
+      font-size: 2.5rem;
+      animation: fadeInUp 1s ease-in-out;
     }
-    .lang-toggle {
-      margin-top: 10px;
-    }
-    .lang-toggle button {
-      margin: 0 5px;
-      padding: 5px 10px;
-      cursor: pointer;
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      animation: fadeInUp 1.5s ease-in-out;
     }
     .container {
       max-width: 1200px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin: auto;
+      padding: 2rem 1rem;
     }
-    .about, .machinery, .contact, .form-section {
-      margin-bottom: 2rem;
+    .section {
+      margin-bottom: 3rem;
     }
-    h2 {
-      color: #20232a;
+    .section h2 {
+      font-size: 2rem;
       margin-bottom: 1rem;
       border-bottom: 2px solid #ccc;
       padding-bottom: 0.5rem;
+      color: #20232a;
     }
-    .machinery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
+    .section p {
+      font-size: 1rem;
     }
-    .machine {
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 1rem;
-      text-align: center;
-      background: #fafafa;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-    .machine:hover {
-      transform: scale(1.03);
-    }
-    .machine img {
+    iframe {
       width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 6px;
-    }
-    .description {
-      display: none;
-      margin-top: 1rem;
-      text-align: left;
-      font-size: 0.95rem;
-    }
-    .contact {
-      text-align: center;
-      background: #20232a;
-      color: #fff;
-      padding: 2rem;
-      border-radius: 8px;
-    }
-    .form-section form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      max-width: 500px;
-      margin: auto;
-    }
-    .form-section input, .form-section textarea {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    .form-section button {
-      background: #20232a;
-      color: #fff;
-      padding: 10px;
+      height: 800px;
       border: none;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-    .thank-you {
-      display: none;
-      text-align: center;
-      font-size: 1.1rem;
-      padding: 20px;
-      color: green;
     }
     footer {
-      background: #101114;
-      color: #aaa;
+      background: #20232a;
+      color: #fff;
       text-align: center;
       padding: 1rem;
-      font-size: 0.9rem;
+    }
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-  <header class="animate__animated animate__fadeInDown">
+  <header>
     <img src="ss_logo.png" alt="Company Logo">
     <h1>Sri Venkateshwara Mechanical Engineering Works</h1>
-    <p id="tagline">Precision. Performance. Perfection.</p>
-    <div class="lang-toggle">
-      <button onclick="setLanguage('en')">English</button>
-      <button onclick="setLanguage('te')">తెలుగు</button>
-      <button onclick="setLanguage('hi')">हिंदी</button>
-    </div>
+    <p>Precision. Performance. Perfection.</p>
   </header>
 
-  <div class="container animate__animated animate__fadeInUp">
-    <section class="about">
-      <h2 id="about-heading">About Us</h2>
-      <p id="about-text">We are a premier engine component reconditioning center in Hyderabad, offering precision honing, boring, grinding, and machining with state-of-the-art equipment. Trusted by industries for performance and accuracy.</p>
+  <div class="container">
+    <section class="section">
+      <h2>About Us</h2>
+      <p>We are a premier engine component reconditioning center in Hyderabad, offering precision honing, boring, grinding, and machining with state-of-the-art equipment. Trusted by industries for performance and accuracy.</p>
     </section>
 
-    <section class="machinery">
-      <h2>Our Machinery</h2>
-      <div class="machinery-grid">
-        <div class="machine" onclick="toggleDescription(this)"><img src="cylinder_honing.png" alt="Cylinder Honing Machine"><h3>Cylinder Honing Machine</h3><div class="description">This machine improves oil retention and ring seating through cross-hatch honing. It’s crucial for performance rebuilding.</div></div>
-        <div class="machine" onclick="toggleDescription(this)"><img src="cylinder boring machine.jpg" alt="Cylinder Boring Machine"><h3>Cylinder Boring Machine</h3><div class="description">It enlarges worn cylinders to factory specifications. Ensures accurate piston fit and engine performance.</div></div>
-        <div class="machine" onclick="toggleDescription(this)"><img src="lathe-machine.webp" alt="Lathe Machine"><h3>Lathe Machine</h3><div class="description">For turning, facing, and threading components. It shapes precision round parts from metals.</div></div>
-        <div class="machine" onclick="toggleDescription(this)"><img src="Hydraulicpress.com" alt="Hydraulic Press"><h3>Hydraulic Press</h3><div class="description">Provides uniform force to remove/install mechanical components. Critical for pressing and assembly operations.</div></div>
-        <div class="machine" onclick="toggleDescription(this)"><img src="drilling-machine.webp" alt="Bench Drill Machine"><h3>Bench Drill Machine</h3><div class="description">Drills accurate holes in metal parts. Adjustable height, speed, and precision.</div></div>
-        <div class="machine" onclick="toggleDescription(this)"><img src="crank grinding machine.jpg" alt="Crankshaft Grinding Machine"><h3>Crankshaft Grinding Machine</h3><div class="description">Restores crank journals to specs. Ensures smooth rotation and reduces engine wear.</div></div>
-      </div>
+    <section class="section">
+      <h2>Our Services</h2>
+      <p>We provide engine reboring, cylinder honing, crankshaft grinding, lathe turning, hydraulic press operations, and complete engine component restoration services with industry-grade precision and care.</p>
     </section>
- <section class="form-section">
-  <h2>Contact Form</h2>
-  <iframe 
-    src="https://docs.google.com/forms/d/e/1FAIpQLSc7eSLW70Pe9bSDLmSuZvKktS0eDhA9jwvscflpeNv9SfChAA/viewform?embedded=true" 
-    width="100%" 
-    height="800" 
-    frameborder="0" 
-    marginheight="0" 
-    marginwidth="0">
-    Loading…
-  </iframe>
-</section>
-    <section class="contact">
-      <h2>Contact Us</h2>
-      <p><i class="fas fa-phone"></i> +1 9133293770</p>
+
+    <section class="section">
+      <h2>Contact Form</h2>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc7eSLW70Pe9bSDLmSuZvKktS0eDhA9jwvscflpeNv9SfChAA/viewform?embedded=true">Loading…</iframe>
+    </section>
+
+    <section class="section">
+      <h2>Contact Details</h2>
+      <p><i class="fas fa-phone"></i> +91 9704011697</p>
       <p><i class="fas fa-envelope"></i> srivenkateshwaramechanicalengi@gmail.com</p>
       <p><i class="fas fa-map-marker-alt"></i> Balaji Nagar, beside Delta Hospital, Hasthinapuram, L.B. Nagar, Hyderabad - 500079</p>
     </section>
@@ -176,46 +111,5 @@
   <footer>
     &copy; 2025 Sri Venkateshwara Mechanical Engineering Works. All rights reserved.
   </footer>
-
-  <script>
-    function setLanguage(lang) {
-      const text = {
-        en: {
-          tagline: "Precision. Performance. Perfection.",
-          about: "We are a premier engine component reconditioning center in Hyderabad, offering precision honing, boring, grinding, and machining with state-of-the-art equipment. Trusted by industries for performance and accuracy."
-        },
-        te: {
-          tagline: "నిర్ధిష్టత. పనితీరు. పరిపూర్ణత.",
-          about: "మేము హైదరాబాద్‌లో ఉన్న ప్రముఖ ఇంజిన్ భాగాల పునఃప్రాసెస్ కేంద్రం, ఖచ్చితమైన హోనింగ్, బోరింగ్, గ్రైండింగ్, మిల్లింగ్ సేవలను అందిస్తున్నాము."
-        },
-        hi: {
-          tagline: "सटीकता। प्रदर्शन। पूर्णता।",
-          about: "हम हैदराबाद में एक प्रमुख इंजन घटक पुनर्निर्माण केंद्र हैं, जो सटीक होनिंग, बोरिंग, ग्राइंडिंग और मशीनिंग सेवाएं प्रदान करता है।"
-        }
-      };
-      document.getElementById("tagline").textContent = text[lang].tagline;
-      document.getElementById("about-text").textContent = text[lang].about;
-    }
-
-    function toggleDescription(el) {
-      const desc = el.querySelector(".description");
-      desc.style.display = desc.style.display === 'block' ? 'none' : 'block';
-    }
-
-    document.getElementById("contactForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const message = document.getElementById("message").value;
-
-      const whatsappURL = `https://wa.me/+1 9133293770?text=Customer Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
-      window.open(whatsappURL, "_blank");
-
-      alert(`A confirmation email will be sent to ${email}. Thank you for contacting us.`);
-
-      document.getElementById("contactForm").style.display = "none";
-      document.getElementById("thankYou").style.display = "block";
-    });
-  </script>
 </body>
 </html>
