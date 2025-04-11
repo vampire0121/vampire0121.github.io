@@ -58,29 +58,41 @@
       gap: 1.5rem;
     }
     .machine {
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 1rem;
-      text-align: center;
-      background: #fafafa;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-    .machine:hover {
-      transform: scale(1.03);
-    }
-    .machine img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 6px;
-    }
-    .description {
-      display: none;
-      margin-top: 1rem;
-      text-align: left;
-      font-size: 0.95rem;
-    }
+  margin: 2rem 0;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.machine:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.machine img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 6px;
+}
+
+.machine h3 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.2rem;
+  color: #20232a;
+}
+
+.machine .description {
+  display: none;
+  font-size: 0.95rem;
+  color: #444;
+  margin-top: 0.5rem;
+}
     .contact {
       text-align: center;
       background: #20232a;
@@ -142,17 +154,45 @@
       <p id="about-text">We are a premier engine component reconditioning center in Hyderabad, offering precision honing, boring, grinding, and machining with state-of-the-art equipment. Trusted by industries for performance and accuracy.</p>
     </section>
 
-    <section class="machinery">
-      <h2>Our Machinery</h2>
-      <div class="machinery-grid">
-        <div class="machine" onclick="toggleDescription(this)"><img src="cylinder_honing.png" alt="Cylinder Honing Machine"><h3>Cylinder Honing Machine</h3><div class="description">This machine improves oil retention and ring seating through cross-hatch honing. It’s crucial for performance rebuilding.</div></div>
-        <div class="machine" onclick="toggleDescription(this)"><img src="cylinder boring machine.jpg" alt="Cylinder Boring Machine"><h3>Cylinder Boring Machine</h3><div class="description">It enlarges worn cylinders to factory specifications. Ensures accurate piston fit and engine performance.</div></div>
-        <div class="machine" onclick="toggleDescription(this)"><img src="lathe-machine.webp" alt="Lathe Machine"><h3>Lathe Machine</h3><div class="description">For turning, facing, and threading components. It shapes precision round parts from metals.</div></div>
-        <div class="machine" onclick="toggleDescription(this)"><img src="Hydraulicpress.com" alt="Hydraulic Press"><h3>Hydraulic Press</h3><div class="description">Provides uniform force to remove/install mechanical components. Critical for pressing and assembly operations.</div></div>
-        <div class="machine" onclick="toggleDescription(this)"><img src="drilling-machine.webp" alt="Bench Drill Machine"><h3>Bench Drill Machine</h3><div class="description">Drills accurate holes in metal parts. Adjustable height, speed, and precision.</div></div>
-        <div class="machine" onclick="toggleDescription(this)"><img src="crank grinding machine.jpg" alt="Crankshaft Grinding Machine"><h3>Crankshaft Grinding Machine</h3><div class="description">Restores crank journals to specs. Ensures smooth rotation and reduces engine wear.</div></div>
-      </div>
-    </section>
+<section class="machinery">
+  <h2>Our Machinery</h2>
+
+  <div class="machine animate__animated animate__fadeInUp" onclick="toggleDescription(this)">
+    <img src="cylinder_honing.png" alt="Cylinder Honing Machine" />
+    <h3>Cylinder Honing Machine</h3>
+    <p class="description">Used to improve oil retention and cylinder performance. Ensures cross-hatch honing for optimal piston fit.</p>
+  </div>
+
+  <div class="machine animate__animated animate__fadeInUp" onclick="toggleDescription(this)">
+    <img src="cylinder boring machine.jpg" alt="Cylinder Boring Machine" />
+    <h3>Cylinder Boring Machine</h3>
+    <p class="description">Expands cylinder bores to factory specs. Essential for engine rebuilding and maintaining power output.</p>
+  </div>
+
+  <div class="machine animate__animated animate__fadeInUp" onclick="toggleDescription(this)">
+    <img src="lathe-machine.webp" alt="Lathe Machine" />
+    <h3>Lathe Machine</h3>
+    <p class="description">Shapes rotating metal parts like shafts and bushings with high precision for mechanical alignment.</p>
+  </div>
+
+  <div class="machine animate__animated animate__fadeInUp" onclick="toggleDescription(this)">
+    <img src="hydraulic press.jpeg" alt="Hydraulic Press" />
+    <h3>Hydraulic Press</h3>
+    <p class="description">Applies uniform force for pressing bearings and components during assembly and disassembly.</p>
+  </div>
+
+  <div class="machine animate__animated animate__fadeInUp" onclick="toggleDescription(this)">
+    <img src="drilling-machine.webp" alt="Bench Drill Machine" />
+    <h3>Bench Drill Machine</h3>
+    <p class="description">For precise hole drilling in metal components. Offers adjustable height and depth control.</p>
+  </div>
+
+  <div class="machine animate__animated animate__fadeInUp" onclick="toggleDescription(this)">
+    <img src="crank grinding machine.jpg" alt="Crankshaft Grinding Machine" />
+    <h3>Crankshaft Grinding Machine</h3>
+    <p class="description">Restores crankshaft journals to OEM specs for improved oiling and longevity of engine life.</p>
+  </div>
+</section>
  <section class="form-section">
   <h2>Contact Form</h2>
   <iframe 
@@ -197,10 +237,10 @@
       document.getElementById("about-text").textContent = text[lang].about;
     }
 
-    function toggleDescription(el) {
-      const desc = el.querySelector(".description");
-      desc.style.display = desc.style.display === 'block' ? 'none' : 'block';
-    }
+  function toggleDescription(el) {
+  const desc = el.querySelector('.description');
+  desc.style.display = desc.style.display === 'block' ? 'none' : 'block';
+}
 
     document.getElementById("contactForm").addEventListener("submit", function (e) {
       e.preventDefault();
